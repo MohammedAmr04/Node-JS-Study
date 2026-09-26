@@ -15,6 +15,31 @@ code for that module.
 | **Type** | ESM (`"type": "module"`) |
 | **Dependencies** | None — standard library only |
 
+A taste of what the module 1 exercise does — a bare HTTP server using
+nothing but the standard library:
+
+```js
+import { createServer } from "node:http";
+
+const hostname = "127.0.0.1";
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "text/plain");
+  res.end("Hello World");
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```bash
+curl http://127.0.0.1:3000/
+# Hello World
+```
+
 ## Requirements
 
 - [Node.js](https://nodejs.org) 20 or newer
