@@ -1,0 +1,14 @@
+{
+  "name": "node-js-study",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal Node.js study notes and exercises",
+  "type": "module",
+  "scripts": {
+    "start": "cd tasks/study-cli && node index.js",
+    "server": "node \"1- Introduction-to-nodejs/index.js\""
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
