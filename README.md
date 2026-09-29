@@ -104,13 +104,40 @@ curl http://127.0.0.1:3000/
 # Hello World
 ```
 
+Module 2 holds three examples on ports 8080-8082. Pick one by setting
+`CURRENT_EXAMPLE` at the top of its `index.js`:
+
+```bash
+npm run http
+```
+
+```bash
+curl -X POST http://127.0.0.1:8082/echo -d "hello"
+```
+
+### Thread pool demo
+
+The thread pool notes in module 1 come with a runnable demo. It measures how
+long the event loop is blocked, re-runs itself with different
+`UV_THREADPOOL_SIZE` values, and prints a timing table:
+
+```bash
+npm run thread-pool
+```
+
+It exits on its own, so it is safe to run anywhere.
+
 ## Repository structure
 
 ```
 .
 ├── 1- Introduction-to-nodejs/     # Module 1: runtime overview + first exercises
-│   ├── Notes.md                   #   Concepts: V8, event loop, REPL
-│   └── index.js                   #   Exercises: http.createServer, console.count
+│   ├── Notes.md                   #   Concepts: V8, event loop, thread pool, REPL
+│   ├── index.js                   #   Exercises: http.createServer, console.count
+│   └── thread-pool.js             #   Runnable demo: async vs sync, UV_THREADPOOL_SIZE
+├── 2- HTTP/                       # Module 2: the http module
+│   ├── Notes.md                   #   Request/response, streams, routing, layer breakdown
+│   └── index.js                   #   Examples: echo server, pipe(), routing + 404
 ├── tasks/
 │   └── study-cli/                 # Interactive subject tracker
 │       ├── index.js               #   readline REPL + fs persistence
@@ -127,6 +154,8 @@ curl http://127.0.0.1:3000/
 |---|---|
 | `npm start` | Runs the study CLI |
 | `npm run server` | Starts the module 1 HTTP server on port 3000 |
+| `npm run http` | Runs the module 2 example server — edit `CURRENT_EXAMPLE` to pick which one |
+| `npm run thread-pool` | Runs the thread pool demo: prints timings, then exits |
 
 ## Notes
 
