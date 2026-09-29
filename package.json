@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "cd tasks/study-cli && node index.js",
-    "server": "node \"1- Introduction-to-nodejs/index.js\""
+    "server": "node \"1- Introduction-to-nodejs/index.js\"",
+    "http": "node \"2- HTTP/index.js\""
   },
   "engines": {
     "node": ">=20"
