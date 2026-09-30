@@ -852,6 +852,22 @@ req.params.id
 // "123"
 ```
 
+### Next step: nested routers
+
+Once a router is mounted on a path that contains a parameter, such as:
+
+```ts
+app.use("/users/:userId", usersRouter);
+```
+
+the child router **loses** `userId` unless you opt in with `mergeParams`:
+
+```ts
+const router = Router({ mergeParams: true });
+```
+
+This is covered in [`router-notes.md`](./router-notes.md), together with nested routers and multi-level parameter inheritance.
+
 ---
 
 # 17. How `app.use()` + Router Work Together
@@ -1079,6 +1095,7 @@ Focus on these concepts first:
 | Continue chain | `next()` | Next middleware/handler |
 | Skip current route | `next("route")` | Next matching route |
 | Router | `express.Router()` | Group related routes |
+| Inherit parent params | `Router({ mergeParams: true })` | Parent params reach the child |
 | All methods | `app.all()` | Any HTTP method |
 
 ---
