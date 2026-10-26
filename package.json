@@ -14,7 +14,9 @@
     "node": ">=20"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "commander": "^15.0.0",
+    "express": "^5.2.1",
+    "uuid": "^14.0.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
