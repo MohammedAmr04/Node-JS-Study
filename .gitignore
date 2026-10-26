@@ -2,8 +2,6 @@
 node_modules/
 
 # Environment / secrets
-.env
-.env.*
 !.env.example
 
 # Logs
@@ -23,7 +21,6 @@ out/
 coverage/
 
 # Editor / IDE
-.vscode/
 .idea/
 *.swp
 
@@ -31,3 +28,4 @@ coverage/
 .DS_Store
 Thumbs.db
 desktop.ini
+config.bat

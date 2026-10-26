@@ -5,7 +5,7 @@
   "description": "Personal Node.js study notes and exercises",
   "type": "module",
   "scripts": {
-    "start": "cd tasks/study-cli && node index.js",
+    "start": "node init && cd tasks/study-cli && node index.js",
     "server": "node \"1- Introduction-to-nodejs/index.js\"",
     "http": "node \"2- HTTP/index.js\"",
     "thread-pool": "node \"1- Introduction-to-nodejs/thread-pool.js\""
@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "commander": "^15.0.0",
+    "dotenv": "^8.2.0",
     "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
     "uuid": "^14.0.3"
   },
   "devDependencies": {
